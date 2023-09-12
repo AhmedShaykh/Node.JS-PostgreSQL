@@ -1,4 +1,5 @@
-import { Sequelize } from "sequelize";
+import { Note } from "../model/Note.js";
+import { Sequelize } from "sequelize-typescript";
 import * as dotenv from "dotenv";
 dotenv.config();
 class Database {
@@ -23,9 +24,10 @@ class Database {
             dialectOptions: {
                 ssl: {
                     require: true,
-                    rejectUnauthorized: false, // Use this only if you're working with self-signed certificates.
-                },
-            }
+                    rejectUnauthorized: false
+                }
+            },
+            models: [Note]
         });
         await this.sequelize.authenticate()
             .then(() => {

@@ -1,4 +1,5 @@
-import { Sequelize } from "sequelize";
+import { Note } from "../model/Note.js";
+import { Sequelize } from "sequelize-typescript";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -28,7 +29,8 @@ class Database {
                     require: true,
                     rejectUnauthorized: false
                 }
-            }
+            },
+            models: [Note]
         });
 
         await this.sequelize.authenticate()
