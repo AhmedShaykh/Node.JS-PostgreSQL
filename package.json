@@ -1,8 +1,8 @@
 {
   "name": "node.js-postgresql",
   "version": "1.0.0",
-  "type": "module",
-  "main": "src/index.ts",
+  "type": "commonjs",
+  "main": "build/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "nodemon ./build/index.js",

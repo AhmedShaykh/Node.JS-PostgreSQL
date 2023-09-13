@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,46 +8,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Column, DataType, Model, Table } from "sequelize-typescript";
-let Note = class Note extends Model {
-    static NOTE_TABLE_NAME = "note";
-    static NOTE_ID = "id";
-    static NOTE_NAME = "name";
-    static NOTE_DESCRIPTION = "description";
-    // @ts-ignore
-    id;
-    name;
-    description;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Note = void 0;
+const sequelize_typescript_1 = require("sequelize-typescript");
+let Note = class Note extends sequelize_typescript_1.Model {
 };
+exports.Note = Note;
+Note.NOTE_TABLE_NAME = "note";
+Note.NOTE_ID = "id";
+Note.NOTE_NAME = "name";
+Note.NOTE_DESCRIPTION = "description";
 __decorate([
-    Column({
-        type: DataType.INTEGER,
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         field: Note.NOTE_ID,
-    })
-    // @ts-ignore
-    ,
+    }),
     __metadata("design:type", Number)
 ], Note.prototype, "id", void 0);
 __decorate([
-    Column({
-        type: DataType.STRING(100),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.STRING(100),
         field: Note.NOTE_NAME,
     }),
     __metadata("design:type", String)
 ], Note.prototype, "name", void 0);
 __decorate([
-    Column({
-        type: DataType.STRING(255),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.STRING(255),
         field: Note.NOTE_DESCRIPTION,
     }),
     __metadata("design:type", String)
 ], Note.prototype, "description", void 0);
-Note = __decorate([
-    Table({
-        tableName: Note.NOTE_TABLE_NAME,
+exports.Note = Note = __decorate([
+    (0, sequelize_typescript_1.Table)({
+        tableName: Note.NOTE_TABLE_NAME
     })
 ], Note);
-export { Note };
 ;

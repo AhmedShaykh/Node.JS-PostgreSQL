@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import Database from "./config/database.js";
+import NoteRouter from "./router/NoteRouter.js";
 
 class App {
 
@@ -8,7 +9,13 @@ class App {
     constructor() {
         this.app = express();
         this.databaseSync();
+        this.plugins();
         this.routes();
+    };
+
+    protected plugins(): void {
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: true }));
     };
 
     protected databaseSync(): void {
@@ -18,8 +25,9 @@ class App {
 
     protected routes(): void {
         this.app.route("/").get((req: Request, res: Response) => {
-            res.send("Welcome Express App");
+            res.send("Welcome To Express App");
         });
+        this.app.use("/api/v1/note", NoteRouter);
     };
 };
 

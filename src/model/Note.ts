@@ -1,8 +1,9 @@
 import { Column, DataType, Model, Table } from "sequelize-typescript";
 
 @Table({
-    tableName: Note.NOTE_TABLE_NAME,
+    tableName: Note.NOTE_TABLE_NAME
 })
+
 export class Note extends Model {
 
     public static NOTE_TABLE_NAME = "note" as string;
@@ -16,7 +17,6 @@ export class Note extends Model {
         autoIncrement: true,
         field: Note.NOTE_ID,
     })
-    // @ts-ignore
     id!: number;
 
     @Column({
