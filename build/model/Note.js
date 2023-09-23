@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var Note_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Note = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-let Note = class Note extends sequelize_typescript_1.Model {
+let Note = exports.Note = Note_1 = class Note extends sequelize_typescript_1.Model {
 };
-exports.Note = Note;
 Note.NOTE_TABLE_NAME = "note";
 Note.NOTE_ID = "id";
 Note.NOTE_NAME = "name";
@@ -23,27 +23,27 @@ __decorate([
         type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        field: Note.NOTE_ID,
+        field: Note_1.NOTE_ID,
     }),
     __metadata("design:type", Number)
 ], Note.prototype, "id", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING(100),
-        field: Note.NOTE_NAME,
+        field: Note_1.NOTE_NAME,
     }),
     __metadata("design:type", String)
 ], Note.prototype, "name", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING(255),
-        field: Note.NOTE_DESCRIPTION,
+        field: Note_1.NOTE_DESCRIPTION,
     }),
     __metadata("design:type", String)
 ], Note.prototype, "description", void 0);
-exports.Note = Note = __decorate([
+exports.Note = Note = Note_1 = __decorate([
     (0, sequelize_typescript_1.Table)({
-        tableName: Note.NOTE_TABLE_NAME
+        tableName: Note_1.NOTE_TABLE_NAME
     })
 ], Note);
 ;
