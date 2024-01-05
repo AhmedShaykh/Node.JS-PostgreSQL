@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Node.JS Express TypeScript PostgreSQL API's",
+        "title": "Node Express.JS  TypeScript PostgreSQL",
         "description": "Node.JS Express TypeScript PostgreSQL (OOP Backend) With Swagger UI",
         "license": {}
     },

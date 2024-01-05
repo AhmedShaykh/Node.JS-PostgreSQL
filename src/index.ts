@@ -1,8 +1,8 @@
 import express, { Application, Request, Response } from "express";
+import * as swaggerDocument from "./swagger.json";
 import Database from "./config/database.js";
 import NoteRouter from "./router/NoteRouter.js";
 import swaggerUi from "swagger-ui-express";
-import * as swaggerDocument from "./swagger.json";
 
 class App {
 
@@ -27,19 +27,15 @@ class App {
     };
 
     protected routes(): void {
-        this.app.route("/").get((req: Request, res: Response) => {
-            res.send("Welcome To Express App");
-        });
-
         this.app.use("/api/v1/note", NoteRouter);
     };
 
     protected swaggerUi(): void {
-        this.app.use('/api/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+        this.app.use("/api/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     };
 };
 
-const port: number = 8000;
+const port: number = 8080;
 
 const app = new App().app;
 

@@ -6,10 +6,10 @@ import validate from "../helper/validate.js";
 class NoteRoutes extends BaseRoutes {
 
     public routes(): void {
-        this.router.post("", validate(createNoteSchema), NoteController.create);
+        this.router.post("/", validate(createNoteSchema), NoteController.create);
         this.router.put("/:id", validate(updateNoteSchema), NoteController.update);
         this.router.delete("/:id", NoteController.delete);
-        this.router.get("", NoteController.findAll);
+        this.router.get("/", NoteController.findAll);
         this.router.get("/:id", NoteController.findById);
     };
 
